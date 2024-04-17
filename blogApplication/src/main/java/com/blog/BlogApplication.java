@@ -12,7 +12,7 @@ import io.swagger.v3.oas.annotations.security.SecuritySchemes;
 import io.swagger.v3.oas.annotations.servers.Server;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "CUSTOMER API", version = "1.1"),
+@OpenAPIDefinition(info = @Info(title = "Blog API", version = "1.1"),
 security = {
 			@SecurityRequirement(name = "basicAuth"), 
 			@SecurityRequirement(name = "bearerToken")
