@@ -1,62 +1,112 @@
-
 # Blog Application
 
-This is a Spring Boot application for managing blog posts, categories, comments, and users.
+This is a Spring Boot-based Blog Application that allows users to perform various operations such as registering, logging in, creating, updating, and deleting posts, categories, comments, and users. The application is secured using Spring Security and JWT authentication.
 
 ## Table of Contents
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Endpoints](#endpoints)
+- [Authorization](#authorization)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Features
 
-- User authentication and authorization using JWT tokens.
-- CRUD operations for managing blog posts, categories, comments, and users.
-- Role-based access control for different endpoints.
-- Exception handling for invalid requests and missing resources.
+- User registration and authentication.
+- CRUD operations for posts, categories, comments, and users.
+- Role-based access control (Admin and User roles).
+- JWT token-based authentication.
+- Exception handling for error responses.
 
 ## Technologies Used
 
-- Java
 - Spring Boot
 - Spring Security
-- Hibernate
+- Spring Data JPA
 - JWT (JSON Web Tokens)
-- mySql Database 
+- Hibernate
+- MySql Database
+- Maven (for dependency management)
+- Swagger UI (for API documentation)
 
-## Getting Started
+## Installation
 
-To get started with this project, follow these steps:
+1. Clone the repository:
 
-1. Clone this repository to your local machine.
-2. Open the project in your preferred IDE.
-3. Configure your database settings in `application.properties`.
-4. Run the application.
+    ```bash
+    git clone <repository-url>
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd blog-application
+    ```
+
+3. Build the project using Maven:
+
+    ```bash
+    mvn clean install
+    ```
+
+4. Run the application:
+
+    ```bash
+    mvn spring-boot:run
+    ```
 
 ## Usage
 
-Once the application is running, you can interact with it using RESTful API calls. You can use tools like Postman or Swagger UI to test the endpoints.
+1. Once the application is running, you can access it at `http://localhost:8081`.
+
+2. Register a new user using the `/api/users/register` endpoint.
+
+3. Log in using the `/api/users/login` endpoint to obtain a JWT token.
+
+4. Use the obtained JWT token to access other endpoints.
 
 ## Endpoints
 
-The application exposes the following endpoints:
+- **User Endpoints**:
+  - `/api/users/register`: Register a new user.
+  - `/api/users/login`: User login.
+  - `/api/users/welcome`: Welcome message.
+  - `/api/users/all`: Get all users (Admin role required).
+  - `/api/users/{id}`: Get user by ID (User role required).
 
-- `/api/users`: Endpoint for managing users (register, login, get all users).
-- `/api/categories`: Endpoint for managing categories (get all categories, get category by ID, create category, update category, delete category).
-- `/api/posts`: Endpoint for managing posts (get all posts, get post by ID, create post, update post, delete post).
-- `/api/comments`: Endpoint for managing comments (get all comments by post ID, create comment, update comment, delete comment).
+- **Post Endpoints**:
+  - `/api/posts`: Get all posts.
+  - `/api/posts/{postId}`: Get post by ID.
+  - `/api/posts`: Create a new post.
+  - `/api/posts/{postId}`: Update post by ID.
+  - `/api/posts/{postId}`: Delete post by ID.
 
-Each endpoint supports various HTTP methods (GET, POST, PUT, DELETE) for performing CRUD operations.
+- **Category Endpoints**:
+  - `/api/categories`: Get all categories.
+  - `/api/categories/{categoryId}`: Get category by ID.
+  - `/api/categories`: Create a new category.
+  - `/api/categories/{categoryId}`: Update category by ID.
+  - `/api/categories/{categoryId}`: Delete category by ID.
+
+- **Comment Endpoints**:
+  - `/api/comments/{postId}`: Get all comments for a post.
+  - `/api/comments/post/{postId}`: Create a new comment for a post.
+  - `/api/comments/{postId}/{commentId}`: Update comment for a post by ID.
+  - `/api/comments/{postId}/{commentId}`: Delete comment for a post by ID.
+
+## Authorization
+
+- Admin role (`ADMIN_ROLES`) is required for accessing endpoints related to users.
+- User role (`USER_ROLES`) is required for accessing endpoints related to posts, categories, comments, and retrieving user details.
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please create a GitHub issue or submit a pull request.
+Contributions are welcome! Feel free to open issues and pull requests.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](LICENSE).
+
