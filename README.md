@@ -37,7 +37,7 @@ This is a Spring Boot-based Blog Application that allows users to perform variou
 1. Clone the repository:
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/Rahul9332935/BlogApp.git
     ```
 
 2. Navigate to the project directory:
@@ -101,10 +101,6 @@ This is a Spring Boot-based Blog Application that allows users to perform variou
 
 - Admin role (`ADMIN_ROLES`) is required for accessing endpoints related to users.
 - User role (`USER_ROLES`) is required for accessing endpoints related to posts, categories, comments, and retrieving user details.
-
-## Contributing
-
-Contributions are welcome! Feel free to open issues and pull requests.
 
 ## License
 
