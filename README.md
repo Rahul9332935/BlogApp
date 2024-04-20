@@ -102,7 +102,8 @@ This is a Spring Boot-based Blog Application that allows users to perform variou
 - Admin role (`ADMIN_ROLES`) is required for accessing endpoints related to users.
 - User role (`USER_ROLES`) is required for accessing endpoints related to posts, categories, comments, and retrieving user details.
 
-## License
+## ScreenShots
 
-This project is licensed under the [MIT License](LICENSE).
-
+![pic-1](https://github.com/Rahul9332935/htmlx.html/blob/main/blog/1.png)
+![pic-1](https://github.com/Rahul9332935/htmlx.html/blob/main/blog/2.png)
+![pic-1](https://github.com/Rahul9332935/htmlx.html/blob/main/blog/3.png)
